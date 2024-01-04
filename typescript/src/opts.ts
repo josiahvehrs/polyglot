@@ -2,14 +2,14 @@ import cli from "command-line-args";
 
 export type ProjectorOpts = {
     args?: string[];
-    pwd?: string[];
     config?: string;
+    pwd?: string;
 };
 
 export default function getOpts(): ProjectorOpts {
     return cli([
         {
-            name: "arguments",
+            name: "args",
             type: String,
             defaultOption: true,
             multiple: true,
