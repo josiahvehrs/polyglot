@@ -1,12 +1,12 @@
 import cli from "command-line-args";
 
-export type ProjectorOpts = {
+export type Opts = {
     args?: string[];
     config?: string;
     pwd?: string;
 };
 
-export default function getOpts(): ProjectorOpts {
+export default function getOpts(): Opts {
     return cli([
         {
             name: "args",
@@ -24,5 +24,5 @@ export default function getOpts(): ProjectorOpts {
             alias: "p",
             type: String,
         },
-    ]) as ProjectorOpts;
+    ]) as Opts;
 }
