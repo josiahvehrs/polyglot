@@ -1,0 +1,16 @@
+{
+  "name": "polyglot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/command-line-args": "^5.2.3",
+    "@types/node": "^20.10.3",
+    "command-line-args": "^5.2.1"
+  }
+}
