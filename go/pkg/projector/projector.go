@@ -80,6 +80,24 @@ func (p *Projector) RemoveValue(key string) {
 	}
 }
 
+func (p *Projector) Save() error {
+	dir := path.Dir(p.config.Config)
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		err := os.Mkdir(dir, 0755)
+		return err
+	}
+
+	jsonString, err := json.Marshal(p.data)
+	if err != nil {
+		return err
+	}
+	err = os.WriteFile(p.config.Config, jsonString, 0755)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func defaultProjector(config *Config) *Projector {
 	return CreateProjector(config, &Data{
 		Projector: map[string]map[string]string{},
