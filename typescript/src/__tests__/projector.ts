@@ -1,7 +1,7 @@
 import { Operation } from "../config";
 import Projector from "../projector";
 
-function createData() {
+function getData() {
     return {
         projector: {
             "/": {
@@ -18,7 +18,7 @@ function createData() {
     };
 }
 
-function getProjector(pwd: string, data = createData()): Projector {
+function getProjector(pwd: string, data = getData()): Projector {
     return new Projector(
         {
             args: [],
@@ -52,7 +52,7 @@ test("getValue", function () {
 });
 
 test("setValue", function () {
-    let data = createData();
+    let data = getData();
     let proj = getProjector("/foo/bar", data);
     proj.setValue("foo", "baz");
     expect(proj.getValue("foo")).toEqual("baz");
