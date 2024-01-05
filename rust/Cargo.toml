@@ -8,3 +8,6 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.79"
 clap = { version = "4.4.13", features = ["derive"] }
+collection_macros = "0.2.0"
+serde = { version = "1.0.194", features = ["derive"] }
+serde_json = "1.0.111"
